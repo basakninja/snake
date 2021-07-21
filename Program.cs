@@ -27,6 +27,10 @@ namespace snake
             verLine1.Draw();
             verLine2.Draw();
 
+            Point p = new Point(4, 5, symb);
+            Snake snake = new Snake(p, 4, Direction.RIGHT);
+            snake.Draw();
+
             Console.ReadLine();
         }
 
