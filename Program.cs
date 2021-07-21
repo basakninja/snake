@@ -6,15 +6,26 @@ namespace snake
     {
         static void Main(string[] args)
         {
-            for (int i = 1; i <= 100; i++)
-            {
 
-                HorizontalLine line = new HorizontalLine(0, 100, i, '$');
-                line.Draw();
-
-            }
+            Console.SetWindowSize(1, 1);
+            Console.SetBufferSize(80, 25);
+            Console.SetWindowSize(80, 25);
 
 
+            char symb = '*';
+
+
+
+            HorizontalLine horLine1 = new HorizontalLine(0, 78, 0, symb);
+            HorizontalLine horLine2 = new HorizontalLine(0, 78, 24, symb);
+            VerticalLine verLine1 = new VerticalLine(0, 24, 0, symb);
+            VerticalLine verLine2 = new VerticalLine(0, 24, 78, symb);
+
+            horLine1.Draw();
+            horLine2.Draw();
+
+            verLine1.Draw();
+            verLine2.Draw();
 
             Console.ReadLine();
         }

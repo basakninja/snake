@@ -2,31 +2,19 @@
 
 namespace snake
 {
-    class HorizontalLine
+    class HorizontalLine : Figure
     {
-        List<Point> plist;
 
         public HorizontalLine(int xLeft, int xReight, int y, char sym)
         {
-            plist = new List<Point>();
+            pList = new List<Point>();
 
             for (int x = xLeft; x <= xReight; x++)
             {
-                Point p = new Point(x,y,sym);
-                plist.Add(p);
-            }
-
-
-
-        }
-        public void Draw()
-        {
-            foreach (Point i in plist)
-            {
-                i.Draw();
+                Point p = new Point(x, y, sym);
+                pList.Add(p);
             }
         }
-
 
     }
 }

@@ -47,9 +47,11 @@
     <Compile Include="Point.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VerticalLine.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <Compile Include="Figure.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
