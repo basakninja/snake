@@ -52,5 +52,11 @@ namespace snake
                 y -= offset;
             }
         }
+
+        public void Clear()
+        {
+            symb = ' ';
+            Draw();
+        }
     }
 }
