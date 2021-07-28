@@ -13,7 +13,7 @@ namespace snake
             Console.SetWindowSize(80, 25);
 
 
-            char symb = '*';
+            char symb = '+';
 
 
 
@@ -28,22 +28,45 @@ namespace snake
             verLine1.Draw();
             verLine2.Draw();
 
+            symb = '*';
+
             Point p = new Point(4, 5, symb);
             Snake snake = new Snake(p, 4, Direction.RIGHT);
             snake.Draw();
-            snake.Move();
-            Thread.Sleep(300);
-            snake.Move();
-            Thread.Sleep(300);
-            snake.Move();
-            Thread.Sleep(300); snake.Move();
-            Thread.Sleep(300); snake.Move();
-            Thread.Sleep(300); snake.Move();
-            Thread.Sleep(300);
 
-            Console.ReadLine();
+
+
+            FoodCreator foodCreator = new FoodCreator(80, 5, '@');
+            Point food = foodCreator.CreateFood();
+            food.Draw();
+
+
+            while (true)
+            {
+
+                if (snake.Eat(food))
+                {
+                    food = foodCreator.CreateFood();
+                    food.Draw();
+                }
+                else
+                {
+                    snake.Move();
+                }
+
+                Thread.Sleep(200);
+
+                if (Console.KeyAvailable)
+                {
+                    ConsoleKeyInfo key = Console.ReadKey();
+                    snake.HandleKey(key.Key);
+                }
+
+
+            }
+
+
+
         }
-
-
     }
 }
